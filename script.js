@@ -6,23 +6,23 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', (event)=>{
         event.preventDefault();
 
-        const username_input= document.getElementById('username').value.trim();
-        const email_input= document.getElementById('email').value.trim();
-        const password_input= document.getElementById('password').value.trim();
+        const username= document.getElementById('username').value.trim();
+        const email= document.getElementById('email').value.trim();
+        const password= document.getElementById('password').value.trim();
 
         let isValid= true;
         let messages=[];
 
-        if(username_input.length < 3){
+        if(username.length < 3){
             isValid=false;
             messages.push('Username should contain atleast 3 characters');
         }
-        if (!email_input.includes('@') || !email_input.includes('.')) {
+        if (!email.includes('@') || !email_input.includes('.')) {
             isValid = false;
             messages.push('Please enter a valid email address.');
         }
         
-        if(password_input.length < 8){
+        if(password.length < 8){
             isValid=false;
             messages.push('Password must have at least 8 characters') ;  
         }
